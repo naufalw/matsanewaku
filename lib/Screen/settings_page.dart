@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:school_app/Screen/constants.dart';
@@ -12,8 +13,8 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return WillPopScope(
       onWillPop: () async {
         NavigatorTransitionsRoute(
@@ -34,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 children: [
                   SizedBox(
                     width: width,
-                    height: height / 15,
+                    height: ScreenUtil().setHeight(120),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -42,7 +43,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       GestureDetector(
                         child: Icon(
                           Icons.arrow_back_ios,
-                          size: width / 10,
+                          size: kAppBarIconSize,
                           color: Colors.white,
                         ),
                         onTap: () {
@@ -59,7 +60,7 @@ class _SettingsPageState extends State<SettingsPage> {
                       Text(
                         "Settings",
                         style: GoogleFonts.fredokaOne(
-                          fontSize: 50,
+                          fontSize: kAppBarFontSize,
                           color: Colors.white,
                           letterSpacing: 0.5,
                         ),

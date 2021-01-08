@@ -1,17 +1,18 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:cool_alert/cool_alert.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:prefs/prefs.dart';
 import 'package:school_app/Screen/constants.dart';
-import 'package:school_app/Screen/cymath.dart';
 import 'package:school_app/Screen/e_learning.dart';
 import 'package:school_app/Screen/newkeepnotescreen.dart';
 import 'package:school_app/Screen/tools_menu.dart';
 import 'package:flutter/services.dart';
 import 'package:school_app/Screen/schedule_screen.dart';
+import 'package:school_app/Screen/videoPlaylist_selector.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:school_app/backend/notif_brain.dart';
 // ignore: unused_import
@@ -76,11 +77,12 @@ class _MainMenuPageState extends State<MainMenuPage> {
 
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light
-          .copyWith(systemNavigationBarColor: Colors.white),
+          .copyWith(systemNavigationBarColor: Colors.transparent),
       child: WillPopScope(
         onWillPop: () async => CoolAlert.show(
           type: CoolAlertType.confirm,
@@ -103,17 +105,18 @@ class _MainMenuPageState extends State<MainMenuPage> {
                       Container(
                         color: kBackGroundColor,
                         width: width,
-                        height: height / 50,
+                        height: ScreenUtil().setHeight(40),
                       ),
                       Container(
                         color: kBackGroundColor,
                         width: width,
-                        height: height / 10,
+                        height: ScreenUtil().setHeight(200),
                         child: Center(
                           child: Text(
                             "Halo Bro !",
                             style: GoogleFonts.fredokaOne(
-                                fontSize: height / 20, color: Colors.white),
+                                fontSize: ScreenUtil().setSp(120),
+                                color: Colors.white),
                           ),
                         ),
                       ),
@@ -166,10 +169,10 @@ class _MainMenuPageState extends State<MainMenuPage> {
                         //crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           ReusableMainMenuCard(
-                            text: "Cymath",
-                            icon: FontAwesomeIcons.calculator,
+                            text: "Zoom Vid",
+                            icon: FontAwesomeIcons.video,
                             animation: AnimationType.slideLeftToRight,
-                            goToScreen: CymathPage(),
+                            goToScreen: VideoPlaylistSelector(),
                           ),
                           ReusableMainMenuCard(
                             text: "E-Learning",

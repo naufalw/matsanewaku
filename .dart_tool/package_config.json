@@ -38,6 +38,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "cached_network_image",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/cached_network_image-2.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
       "name": "characters",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/characters-1.1.0-nullsafety.5",
       "packageUri": "lib/",
@@ -80,6 +86,12 @@
       "languageVersion": "2.3"
     },
     {
+      "name": "csslib",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/csslib-0.16.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
+    },
+    {
       "name": "cupertino_icons",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/cupertino_icons-0.1.3",
       "packageUri": "lib/",
@@ -90,6 +102,12 @@
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/dynamic_theme-1.0.1",
       "packageUri": "lib/",
       "languageVersion": "1.20"
+    },
+    {
+      "name": "equatable",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/equatable-1.2.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "expressions",
@@ -134,16 +152,40 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_blurhash",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_blurhash-0.5.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.4"
+    },
+    {
+      "name": "flutter_cache_manager",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_cache_manager-2.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "flutter_grid_button",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_grid_button-1.1.8",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
     {
+      "name": "flutter_inappwebview",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_inappwebview-4.0.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "flutter_launcher_icons",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.1",
       "packageUri": "lib/",
       "languageVersion": "2.3"
+    },
+    {
+      "name": "flutter_screenutil",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_screenutil-3.2.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
     },
     {
       "name": "flutter_simple_calculator",
@@ -182,6 +224,12 @@
       "languageVersion": "2.3"
     },
     {
+      "name": "html",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/html-0.14.0+4",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "http",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/http-0.12.2",
       "packageUri": "lib/",
@@ -212,6 +260,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "json_annotation",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/json_annotation-3.1.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "matcher",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/matcher-0.12.10-nullsafety.3",
       "packageUri": "lib/",
@@ -224,16 +278,40 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "mime",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/mime-0.9.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
+    },
+    {
       "name": "navigator_transitions_route",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/navigator_transitions_route-0.1.3",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     },
     {
+      "name": "nepali_date_picker",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/nepali_date_picker-4.2.0+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "nepali_utils",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/nepali_utils-2.2.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
       "name": "nested",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/nested-0.0.4",
       "packageUri": "lib/",
       "languageVersion": "2.2"
+    },
+    {
+      "name": "octo_image",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/octo_image-0.3.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "path",
@@ -320,6 +398,18 @@
       "languageVersion": "2.0"
     },
     {
+      "name": "rxdart",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/rxdart-0.25.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "school_ui_toolkit",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/school_ui_toolkit-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "shared_preferences",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12+4",
       "packageUri": "lib/",
@@ -380,6 +470,18 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "sqflite",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/sqflite-1.3.2+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.10"
+    },
+    {
+      "name": "sqflite_common",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/sqflite_common-1.0.2+1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "stack_trace",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/stack_trace-1.10.0-nullsafety.6",
       "packageUri": "lib/",
@@ -398,6 +500,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "synchronized",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/synchronized-2.2.0+2",
+      "packageUri": "lib/",
+      "languageVersion": "2.8"
+    },
+    {
       "name": "term_glyph",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/term_glyph-1.2.0-nullsafety.3",
       "packageUri": "lib/",
@@ -414,6 +522,12 @@
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/typed_data-1.3.0-nullsafety.5",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "uuid",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/uuid-2.2.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.2"
     },
     {
       "name": "vector_math",
@@ -446,13 +560,31 @@
       "languageVersion": "2.4"
     },
     {
+      "name": "youtube_explode_dart",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/youtube_explode_dart-1.7.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.6"
+    },
+    {
+      "name": "youtube_parser",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/youtube_parser-1.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "1.12"
+    },
+    {
+      "name": "youtube_player_flutter",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/youtube_player_flutter-7.0.0+7",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "school_app",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-08T12:26:34.607043Z",
+  "generated": "2021-01-08T14:45:10.929167Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-179.0.dev"
 }

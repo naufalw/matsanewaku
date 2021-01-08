@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:school_app/Screen/constants.dart';
+import 'package:school_app/Screen/cymath.dart';
 import 'package:school_app/Screen/main_menu.dart';
 import 'package:school_app/Screen/settings_page.dart';
 import 'package:school_app/Screen/calc_screen.dart';
@@ -17,6 +19,7 @@ class ToolsMenu extends StatefulWidget {
 class _ToolsMenuState extends State<ToolsMenu> {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -42,7 +45,7 @@ class _ToolsMenuState extends State<ToolsMenu> {
                   children: [
                     SizedBox(
                       width: width,
-                      height: height / 15,
+                      height: kAppBarTopMargin,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -50,7 +53,7 @@ class _ToolsMenuState extends State<ToolsMenu> {
                         GestureDetector(
                           child: Icon(
                             Icons.arrow_back_ios,
-                            size: width / 10,
+                            size: kAppBarIconSize,
                             color: Colors.white,
                           ),
                           onTap: () {
@@ -67,7 +70,7 @@ class _ToolsMenuState extends State<ToolsMenu> {
                         Text(
                           "Tools",
                           style: GoogleFonts.fredokaOne(
-                            fontSize: 50,
+                            fontSize: kAppBarFontSize,
                             color: Colors.white,
                             letterSpacing: 0.5,
                           ),
@@ -76,7 +79,7 @@ class _ToolsMenuState extends State<ToolsMenu> {
                           child: Icon(
                             FontAwesomeIcons.cog,
                             color: Colors.white,
-                            size: width / 10,
+                            size: kAppBarIconSize,
                           ),
                           onTap: () {
                             setState(() {
@@ -131,7 +134,7 @@ class _ToolsMenuState extends State<ToolsMenu> {
                     ),
                     SizedBox(
                       width: double.infinity,
-                      height: height / 80,
+                      height: ScreenUtil().setHeight(30),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(5.0),
@@ -141,13 +144,19 @@ class _ToolsMenuState extends State<ToolsMenu> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             ToolsMenuCard(
+                                width: width,
+                                animType: AnimationType.slideLeftToRight,
+                                text: "Cymath",
+                                icon: FontAwesomeIcons.calculator,
+                                navigateTo: CymathPage()),
+                            ToolsMenuCard(
                               width: width,
-                              animType: AnimationType.slideLeftToRight,
+                              animType: AnimationType.slideRightToLeft,
                               text: "Conjugator",
                               icon: Icons.book_rounded,
                               navigateTo: ToolsMenuBrowser(
                                   url: 'https://en.bab.la/conjugation/english/',
-                                  animType: AnimationType.slideRightToLeft,
+                                  animType: AnimationType.slideLeftToRight,
                                   title: "Conjugator"),
                             ),
                           ],
@@ -185,8 +194,8 @@ class ToolsMenuCardDualLine extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width / 2.3,
-      height: width / 2.75,
+      width: kToolsMenuButtonWidth,
+      height: kToolsMenuButtonHeight,
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         color: kSecondColor,
@@ -241,8 +250,8 @@ class ToolsMenuCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width / 2.3,
-      height: width / 2.75,
+      width: kToolsMenuButtonWidth,
+      height: kToolsMenuButtonHeight,
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(14)),
         color: kSecondColor,
