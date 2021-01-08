@@ -122,7 +122,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                       ),
                       Container(
                         width: width,
-                        height: height / 3.2,
+                        height: ScreenUtil().setHeight(600),
                         child: ListView.builder(
                           padding: EdgeInsets.all(0),
                           itemBuilder: (_, index) {
@@ -131,7 +131,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                                 JadwalCard(width: width, height: height),
                                 SizedBox(
                                   width: width,
-                                  height: height / 60,
+                                  height: ScreenUtil().setHeight(30),
                                 )
                               ],
                             );
@@ -184,7 +184,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                       ),
                       SizedBox(
                         width: double.infinity,
-                        height: height / 30,
+                        height: ScreenUtil().setHeight(60),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(5.0),
@@ -210,7 +210,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
                       ),
                       SizedBox(
                         width: double.infinity,
-                        height: height / 30,
+                        height: ScreenUtil().setHeight(60),
                       ),
                       Padding(
                         padding: const EdgeInsets.all(5.0),
@@ -259,8 +259,8 @@ class JadwalCard extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10.0, 0.0, 10, 0.0),
       child: Container(
-        width: double.infinity,
-        height: width * 0.5,
+        width: ScreenUtil().screenWidth,
+        height: ScreenUtil().setHeight(470),
         decoration: BoxDecoration(
             color: Color(0xFF3362CC), borderRadius: BorderRadius.circular(30)),
         child: InkWell(
@@ -277,8 +277,8 @@ class JadwalCard extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      width: width / 5,
-                      height: width / 5,
+                      width: ScreenUtil().setWidth(200),
+                      height: ScreenUtil().setWidth(200),
                       decoration: BoxDecoration(
                         color: Colors.white30,
                         borderRadius: BorderRadius.circular(
@@ -288,32 +288,31 @@ class JadwalCard extends StatelessWidget {
                       child: Icon(
                         FontAwesomeIcons.book,
                         color: Colors.blue[100],
-                        size: width / 10,
+                        size: ScreenUtil().setSp(100),
                       ),
                     ),
                     SizedBox(
-                      width: 15,
+                      width: ScreenUtil().setWidth(50),
                     ),
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Container(
-                          width: width / 4,
+                          width: ScreenUtil().setWidth(500),
                           child: Text('Null',
                               style: GoogleFonts.fredokaOne(
                                 color: Colors.white,
-                                fontSize: width / 10,
+                                fontSize: ScreenUtil().setSp(100),
                               )),
                         ),
                         Container(
-                          width: width / 1.7,
+                          width: ScreenUtil().setWidth(500),
                           child: Text(
                             'Null',
                             style: GoogleFonts.firaSans(
-                              color: Colors.white60,
-                              fontWeight: FontWeight.bold,
-                              fontSize: width / 20,
-                            ),
+                                color: Colors.white60,
+                                fontWeight: FontWeight.bold,
+                                fontSize: ScreenUtil().setSp(50)),
                           ),
                         ),
                       ],
@@ -324,7 +323,7 @@ class JadwalCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SizedBox(
-                      width: width * 0.015,
+                      width: ScreenUtil().setWidth(15),
                       height: width * 0.01,
                     ),
                     Expanded(
@@ -336,13 +335,13 @@ class JadwalCard extends StatelessWidget {
                             "Zoom",
                             style: GoogleFonts.passionOne(
                                 color: Color(0xFF9EB4E7),
-                                fontSize: width * 0.05,
+                                fontSize: ScreenUtil().setSp(55),
                                 fontWeight: FontWeight.w400),
                           ),
                           Text("Null",
                               style: GoogleFonts.fredokaOne(
                                   color: Colors.white,
-                                  fontSize: height * 0.021,
+                                  fontSize: ScreenUtil().setSp(45),
                                   fontWeight: FontWeight.w100)),
                         ],
                       ),
@@ -357,13 +356,13 @@ class JadwalCard extends StatelessWidget {
                             "Pengajar",
                             style: GoogleFonts.passionOne(
                                 color: Color(0xFF9EB4E7),
-                                fontSize: width * 0.05,
+                                fontSize: ScreenUtil().setSp(55),
                                 fontWeight: FontWeight.w400),
                           ),
                           Text("Null",
                               style: GoogleFonts.fredokaOne(
                                   color: Colors.white,
-                                  fontSize: height * 0.021,
+                                  fontSize: ScreenUtil().setSp(45),
                                   fontWeight: FontWeight.w100))
                         ],
                       ),
@@ -403,10 +402,9 @@ class UnusedCardWidgetMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
-      width: width / 2.57,
-      height: width / 2.57,
+      width: ScreenUtil().setWidth(430),
+      height: ScreenUtil().setHeight(360),
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         color: kMainColor,
@@ -444,10 +442,9 @@ class ReusableMainMenuCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double width = MediaQuery.of(context).size.width;
     return Container(
-      width: width / 2.57,
-      height: width / 2.57,
+      width: ScreenUtil().setWidth(430),
+      height: ScreenUtil().setHeight(360),
       child: RaisedButton(
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
         color: kMainColor,
@@ -468,11 +465,11 @@ class ReusableMainMenuCard extends StatelessWidget {
             Icon(
               icon,
               color: Colors.white,
-              size: 48,
+              size: ScreenUtil().setSp(140),
             ),
             Text(text,
-                style:
-                    GoogleFonts.fredokaOne(color: Colors.white, fontSize: 20))
+                style: GoogleFonts.fredokaOne(
+                    color: Colors.white, fontSize: ScreenUtil().setSp(55)))
           ],
         ),
       ),

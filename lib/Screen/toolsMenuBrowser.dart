@@ -75,7 +75,8 @@ class _ToolsMenuBrowserState extends State<ToolsMenuBrowser> {
           withOverviewMode: true,
           appBar: AppBar(
             brightness: Brightness.dark,
-            title: Text(widget.title, style: GoogleFonts.fredokaOne()),
+            title: Text(widget.title,
+                style: GoogleFonts.fredokaOne(fontSize: kNativeAppBarFontSize)),
             leading: GestureDetector(
               child: Icon(
                 Icons.arrow_back,

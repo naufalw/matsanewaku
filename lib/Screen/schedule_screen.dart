@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:prefs/prefs.dart';
@@ -54,7 +55,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
             child: Column(
               children: [
                 Container(
-                  height: height * 0.1,
+                  height: kAppBarTopMargin,
                   width: width,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -63,7 +64,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                         child: Icon(
                           Icons.arrow_back_ios,
                           color: Colors.white,
-                          size: width / 10,
+                          size: kAppBarIconSize,
                         ),
                         onTap: () {
                           setState(() {
@@ -79,7 +80,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                       Text(
                         "Schedule",
                         style: GoogleFonts.fredokaOne(
-                          fontSize: 50,
+                          fontSize: kAppBarFontSize,
                           letterSpacing: 0.5,
                           color: Colors.white,
                         ),
@@ -90,7 +91,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                   ),
                 ),
                 Container(
-                  height: height / 20,
+                  height: kAppBarTopMargin,
                   width: width,
                 ),
                 Expanded(
@@ -108,7 +109,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               "Notifications",
                               style: GoogleFonts.firaSans(
                                   color: Colors.white,
-                                  fontSize: height * 0.04,
+                                  fontSize: ScreenUtil().setSp(90),
                                   fontWeight: FontWeight.w500),
                             ),
                             DropdownButton(
@@ -117,14 +118,14 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               dropdownColor: kMainColor,
                               style: GoogleFonts.firaSans(
                                 color: Colors.white,
-                                fontSize: height * 0.04,
+                                fontSize: ScreenUtil().setSp(90),
                                 fontWeight: FontWeight.w500,
                               ),
                               hint: Text(
                                 Prefs.getString("kelasNotif", kelas[0]),
                                 style: GoogleFonts.firaSans(
                                   color: Colors.white,
-                                  fontSize: height * 0.04,
+                                  fontSize: ScreenUtil().setSp(90),
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
@@ -143,7 +144,7 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
                               },
                             ),
                             Container(
-                              width: width / 6,
+                              width: ScreenUtil().setWidth(160),
                               child: Switch(
                                 activeColor: kSecondColor,
                                 activeTrackColor: Colors.purple[90],

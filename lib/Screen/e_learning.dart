@@ -1,5 +1,4 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,7 +57,10 @@ class _ELearningPageState extends State<ELearningPage> {
         withOverviewMode: true,
         appBar: AppBar(
             backgroundColor: kBackGroundColor,
-            title: Text("E-Learning MTs", style: GoogleFonts.fredokaOne()),
+            title: Text(
+              "E-Learning MTs",
+              style: GoogleFonts.fredokaOne(fontSize: kNativeAppBarFontSize),
+            ),
             centerTitle: true,
             leading: GestureDetector(
               child: Icon(
@@ -71,7 +73,7 @@ class _ELearningPageState extends State<ELearningPage> {
             ),
             actions: [
               Padding(
-                padding: EdgeInsets.only(right: 20),
+                padding: EdgeInsets.only(right: 20.0),
                 child: GestureDetector(
                   child: Icon(Icons.refresh),
                   onTap: () {

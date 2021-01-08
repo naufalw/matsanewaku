@@ -83,7 +83,46 @@ class _VideoPlaylistSelectorState extends State<VideoPlaylistSelector> {
               ),
               Expanded(
                 flex: 4,
-                child: Container(),
+                child: Column(children: [
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Container(
+                      width: ScreenUtil().screenWidth,
+                      height: ScreenUtil().setHeight(115),
+                      child: RaisedButton(
+                        onPressed: () {
+                          setState(() {
+                            NavigatorTransitionsRoute(
+                                context: context,
+                                child: VideoPlaylist(
+                                    'PL6wJWURYUK0I2b_KLTislSlvfRh1yfhGy'));
+                          });
+                        },
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        color: kMainColor,
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Text(
+                              "9L",
+                              style: GoogleFonts.fredokaOne(
+                                color: Colors.white,
+                                fontSize: ScreenUtil().setSp(90),
+                              ),
+                            ),
+                            Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.white,
+                              size: ScreenUtil().setSp(75),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
+                  )
+                ]),
               ),
             ],
           ),
@@ -94,15 +133,18 @@ class _VideoPlaylistSelectorState extends State<VideoPlaylistSelector> {
 }
 
 class VideoPlaylist extends StatefulWidget {
+  final String playlistID;
+  VideoPlaylist(this.playlistID);
   @override
   _VideoPlaylistState createState() => _VideoPlaylistState();
 }
 
 class _VideoPlaylistState extends State<VideoPlaylist> {
+  String playlistID;
   var dataVid = [];
   var yt = YoutubeExplode();
-  Future<void> getItemsList() async {
-    var playlist = await yt.playlists.get('PL6wJWURYUK0I2b_KLTislSlvfRh1yfhGy');
+  Future<void> getItemsList(String plID) async {
+    var playlist = await yt.playlists.get(plID);
     await for (var video in yt.playlists.getVideos(playlist.id)) {
       var videoTitle = video.title;
       var videoThumb = video.thumbnails.highResUrl;
@@ -118,8 +160,9 @@ class _VideoPlaylistState extends State<VideoPlaylist> {
   }
 
   void initState() {
+    playlistID = widget.playlistID;
     super.initState();
-    getItemsList();
+    getItemsList(playlistID);
   }
 
   @override
