@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.arturogutierrez:badges:1.0.5@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0bfc38a342e04ab4e06dc5e6549fd280/badges-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/33c443571034fcfa3324868e5d2dc9ef/jetified-badges-1.0.5/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/353da8169260d76f22ce0cbd784e4f4a/jetified-badges-1.0.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/353da8169260d76f22ce0cbd784e4f4a/jetified-badges-1.0.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/353da8169260d76f22ce0cbd784e4f4a/jetified-badges-1.0.5/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.arturogutierrez/badges/1.0.5/a4b700be2949835c6564df8f0a5e9c831b4a444c/badges-1.0.5-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.arturogutierrez/badges/1.0.5/efab91b7c7847cde6a3dafedfd2157d6403d58d8/badges-1.0.5-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

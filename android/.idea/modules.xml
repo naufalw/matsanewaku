@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/android.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/android.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1239931840/android.awesome_notifications.iml" filepath="$PROJECT_DIR$/.idea/modules/-1239931840/android.awesome_notifications.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1383165500/android.firebase_analytics.iml" filepath="$PROJECT_DIR$/.idea/modules/1383165500/android.firebase_analytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1887044826/android.firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/-1887044826/android.firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1781573836/android.firebase_crashlytics.iml" filepath="$PROJECT_DIR$/.idea/modules/1781573836/android.firebase_crashlytics.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/923852836/android.firebase_performance.iml" filepath="$PROJECT_DIR$/.idea/modules/923852836/android.firebase_performance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1467156405/android.flutter_webview_plugin.iml" filepath="$PROJECT_DIR$/.idea/modules/-1467156405/android.flutter_webview_plugin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1544040216/android.path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1544040216/android.path_provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/416705361/android.shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/416705361/android.shared_preferences.iml" />
+    </modules>
+  </component>
+</project>
