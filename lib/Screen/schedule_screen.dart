@@ -51,130 +51,132 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
         },
         child: Scaffold(
           backgroundColor: kBackGroundColor,
-          body: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  height: kAppBarTopMargin,
-                  width: width,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: [
-                      GestureDetector(
-                        child: Icon(
-                          Icons.arrow_back_ios,
-                          color: Colors.white,
-                          size: kAppBarIconSize,
+          body: Column(
+            children: [
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: kAppBarTopMargin,
+                      width: width,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        GestureDetector(
+                          child: Icon(
+                            Icons.arrow_back_ios,
+                            color: Colors.white,
+                            size: kAppBarIconSize,
+                          ),
+                          onTap: () {
+                            setState(() {
+                              NavigatorTransitionsRoute(
+                                context: context,
+                                child: MainMenuPage(),
+                                animation: AnimationType.slideLeftToRight,
+                                duration: Duration(milliseconds: 300),
+                              );
+                            });
+                          },
                         ),
-                        onTap: () {
-                          setState(() {
-                            NavigatorTransitionsRoute(
-                              context: context,
-                              child: MainMenuPage(),
-                              animation: AnimationType.slideLeftToRight,
-                              duration: Duration(milliseconds: 300),
-                            );
-                          });
-                        },
-                      ),
-                      Text(
-                        "Schedule",
-                        style: GoogleFonts.fredokaOne(
-                          fontSize: kAppBarFontSize,
-                          letterSpacing: 0.5,
-                          color: Colors.white,
+                        Text(
+                          "Schedule",
+                          style: GoogleFonts.fredokaOne(
+                            fontSize: kAppBarFontSize,
+                            letterSpacing: 0.5,
+                            color: Colors.white,
+                          ),
                         ),
-                      ),
-                      Container(),
-                      Container(),
-                    ],
-                  ),
+                        Container(),
+                        Container(),
+                      ],
+                    ),
+                  ],
                 ),
-                Container(
-                  height: kAppBarTopMargin,
-                  width: width,
-                ),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      Container(
-                        padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Text(
-                              "Notifications",
-                              style: GoogleFonts.firaSans(
-                                  color: Colors.white,
-                                  fontSize: ScreenUtil().setSp(90),
-                                  fontWeight: FontWeight.w500),
+              ),
+              Expanded(
+                flex: 4,
+                child: Column(
+                  children: [
+                    Container(
+                      padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Text(
+                            "Notifications",
+                            style: GoogleFonts.firaSans(
+                                color: Colors.white,
+                                fontSize: ScreenUtil().setSp(90),
+                                fontWeight: FontWeight.w500),
+                          ),
+                          DropdownButton(
+                            iconDisabledColor: Colors.white,
+                            iconEnabledColor: Colors.white,
+                            dropdownColor: kMainColor,
+                            style: GoogleFonts.firaSans(
+                              color: Colors.white,
+                              fontSize: ScreenUtil().setSp(90),
+                              fontWeight: FontWeight.w500,
                             ),
-                            DropdownButton(
-                              iconDisabledColor: Colors.white,
-                              iconEnabledColor: Colors.white,
-                              dropdownColor: kMainColor,
+                            hint: Text(
+                              Prefs.getString("kelasNotif", kelas[0]),
                               style: GoogleFonts.firaSans(
                                 color: Colors.white,
                                 fontSize: ScreenUtil().setSp(90),
                                 fontWeight: FontWeight.w500,
                               ),
-                              hint: Text(
-                                Prefs.getString("kelasNotif", kelas[0]),
-                                style: GoogleFonts.firaSans(
-                                  color: Colors.white,
-                                  fontSize: ScreenUtil().setSp(90),
-                                  fontWeight: FontWeight.w500,
-                                ),
-                              ),
-                              value: Prefs.getString("kelasNotif", kelas[0]),
-                              items: kelas.map((e) {
-                                return DropdownMenuItem(
-                                  child: Center(child: Text(e)),
-                                  value: e,
-                                );
-                              }).toList(),
-                              onChanged: (value) async {
-                                await Prefs.setString("kelasNotif", value);
+                            ),
+                            value: Prefs.getString("kelasNotif", kelas[0]),
+                            items: kelas.map((e) {
+                              return DropdownMenuItem(
+                                child: Center(child: Text(e)),
+                                value: e,
+                              );
+                            }).toList(),
+                            onChanged: (value) async {
+                              await Prefs.setString("kelasNotif", value);
+                              setState(() {
+                                applySchedule(Prefs.getBool("notifStatus"));
+                              });
+                            },
+                          ),
+                          Container(
+                            width: ScreenUtil().setWidth(160),
+                            child: Switch(
+                              activeColor: kSecondColor,
+                              activeTrackColor: Colors.purple[90],
+                              inactiveTrackColor: Colors.grey,
+                              value: Prefs.getBool("notifStatus", false),
+                              onChanged: (state) async {
+                                Prefs.setBool("notifStatus", state);
                                 setState(() {
-                                  applySchedule(Prefs.getBool("notifStatus"));
+                                  applySchedule(state);
+                                  if (state == true) {
+                                    AwesomeNotifications().createNotification(
+                                        content: NotificationContent(
+                                            id: Random().nextInt(10000),
+                                            channelKey: 'progress_channel',
+                                            title: 'Information',
+                                            body:
+                                                'Notification Service is Running'));
+                                  }
                                 });
                               },
                             ),
-                            Container(
-                              width: ScreenUtil().setWidth(160),
-                              child: Switch(
-                                activeColor: kSecondColor,
-                                activeTrackColor: Colors.purple[90],
-                                inactiveTrackColor: Colors.grey,
-                                value: Prefs.getBool("notifStatus", false),
-                                onChanged: (state) async {
-                                  Prefs.setBool("notifStatus", state);
-                                  setState(() {
-                                    applySchedule(state);
-                                    if (state == true) {
-                                      AwesomeNotifications().createNotification(
-                                          content: NotificationContent(
-                                              id: Random().nextInt(10000),
-                                              channelKey: 'progress_channel',
-                                              title: 'Information',
-                                              body:
-                                                  'Notification Service is Running'));
-                                    }
-                                  });
-                                },
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
-                )
-              ],
-            ),
+                    ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),

@@ -35,7 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 children: [
                   SizedBox(
                     width: width,
-                    height: ScreenUtil().setHeight(120),
+                    height: kAppBarTopMargin,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

@@ -164,6 +164,12 @@
       "languageVersion": "2.6"
     },
     {
+      "name": "flutter_easyrefresh",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_easyrefresh-2.1.8",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "flutter_grid_button",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/flutter_grid_button-1.1.8",
       "packageUri": "lib/",
@@ -392,6 +398,12 @@
       "languageVersion": "2.7"
     },
     {
+      "name": "pull_to_refresh",
+      "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/pull_to_refresh-1.6.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "quiver",
       "rootUri": "file:///home/naufal/.pub-cache/hosted/pub.dartlang.org/quiver-2.1.5",
       "packageUri": "lib/",
@@ -584,7 +596,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-01-08T14:45:10.929167Z",
+  "generated": "2021-01-09T04:53:09.406516Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-179.0.dev"
 }
