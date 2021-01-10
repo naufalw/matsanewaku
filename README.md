@@ -14,5 +14,8 @@ TODO :
 2. Books Page (Menu and Book Reader)
 3. Implement the homescreen learning schedule
 
+I hope there is a generation after me who can continue this project
+Contact : naufalwiwitputra@gmail.com or naufalwiwitputra@outlook.com
+
 # Thank You
 Thanks to whoever was involved and used this application, Naufal from 9L (Social Science) Matsanewa :). 
