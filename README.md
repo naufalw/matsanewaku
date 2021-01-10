@@ -1,3 +1,5 @@
+This app is written using flutter framework and dart language  
+
 # Matsanewaku
 Desc : An (Hopefully) useful app to automate and integrate boring things in your life:)   
 Deskripsi : Suatu aplikasi yang berguna untuk memudahkan kegiatan bersekolah sehari hari terutama sekolah online di masa pandemi
