@@ -5,6 +5,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:prefs/prefs.dart';
 import 'package:school_app/Screen/constants.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -31,6 +32,8 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
     _controller = YoutubePlayerController(
       initialVideoId: idVid,
       flags: YoutubePlayerFlags(
+        enableCaption: false,
+        autoPlay: Prefs.getBool("autoplayState", true),
         forceHD: true,
         disableDragSeek: true,
       ),
@@ -51,6 +54,10 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
         showVideoProgressIndicator: true,
         controller: _controller,
         aspectRatio: 16 / 9,
+        progressColors: ProgressBarColors(
+          backgroundColor: kSecondColor,
+          playedColor: kMainColor,
+        ),
       ),
       builder: (context, player) {
         return AnnotatedRegion(

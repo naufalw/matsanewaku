@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
+import 'package:prefs/prefs.dart';
 import 'package:school_app/Screen/constants.dart';
 import 'package:school_app/Screen/tools_menu.dart';
 
@@ -72,7 +74,41 @@ class _SettingsPageState extends State<SettingsPage> {
             ),
             Expanded(
               flex: 4,
-              child: Container(),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.fromLTRB(5.0, 0.0, 5.0, 0.0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          "ZoomVid Autoplay",
+                          style: GoogleFonts.firaSans(
+                              color: Colors.white,
+                              fontSize: ScreenUtil().setSp(90),
+                              fontWeight: FontWeight.w500),
+                        ),
+                        Container(
+                          width: ScreenUtil().setWidth(160),
+                          child: Switch(
+                            activeColor: kSecondColor,
+                            activeTrackColor: Colors.purple[90],
+                            inactiveTrackColor: Colors.grey,
+                            value: Prefs.getBool("autoplayState", true),
+                            onChanged: (state) {
+                              Prefs.setBool("autoplayState", state);
+                              setState(() {});
+                            },
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
           ],
         ),
