@@ -8,85 +8,84 @@ bool notifEnabled = Prefs.getBool("notifStatus", false);
 void notifScheduler() {
   if (notifEnabled == true) {
     if (kelas == '9L') {
-      notifBuatMapel('IPA', '0 ${jam9L["IPA"]} ? * MON', 10);
-      notifBuatMapel('Pembinaan', '0 ${jam9L["Pembinaan"]} ? * MON', 20);
-      notifBuatMapel('SKI', '0 ${jam9L["SKI"]} ? * MON', 30);
-      notifBuatMapel('KIR', '0 ${jam9L["KIR"]} ? * MON', 40);
-      notifBuatMapel('SBY', '0 ${jam9L["SBY"]} ? * TUE', 50);
-      notifBuatMapel('BIN', '0 ${jam9L["BIN"]} ? * TUE', 60);
-      notifBuatMapel('FQH', '0 ${jam9L["FQH"]} ? * TUE', 70);
-      notifBuatMapel('TTL', '0 ${jam9L["TTL"]} ? * TUE', 80);
+      notifBuatMapel('PKY', '0 ${jam9L["PKY"]} ? * MON', 10);
+      notifBuatMapel('BA', '0 ${jam9L["BA"]} ? * MON', 20);
+      notifBuatMapel('FQH', '0 ${jam9L["FQH"]} ? * MON', 30);
+      notifBuatMapel('PPKN', '0 ${jam9L["PPKN"]} ? * MON', 40);
+      notifBuatMapel('AA', '0 ${jam9L["AA"]} ? * TUE', 50);
+      notifBuatMapel('Pembinaan', '0 ${jam9L["Pembinaan"]} ? * TUE', 60);
+      notifBuatMapel('SKI', '0 ${jam9L["SKI"]} ? * TUE', 70);
+      notifBuatMapel('IPA', '0 ${jam9L["IPA"]} ? * TUE', 80);
       notifBuatMapel('MTK', '0 ${jam9L["MTK"]} ? * WED', 90);
-      notifBuatMapel('PKY', '0 ${jam9L["PKY"]} ? * WED', 100);
-      notifBuatMapel('IPS', '0 ${jam9L["IPS"]} ? * WED', 110);
-      notifBuatMapel('QH', '0 ${jam9L["QH"]} ? * THU', 120);
-      notifBuatMapel('AA', '0 ${jam9L["AA"]} ? * THU', 130);
-      notifBuatMapel('BIG', '0 ${jam9L["BIG"]} ? * THU', 140);
-      notifBuatMapel('BA', '0 ${jam9L["BA"]} ? * THU', 150);
-      notifBuatMapel('PPKN', '0 ${jam9L["PPKN"]} ? * FRI', 160);
-      notifBuatMapel('BK', '0 ${jam9L["BK"]} ? * FRI', 170);
-      notifBuatMapel('PJS', '0 ${jam9L["PJS"]} ? * FRI', 180);
-      notifBuatMapel('Ngaji Pagi', '0 50 23 ? * SUN,TUE,THU', 190);
+      notifBuatMapel('SBY', '0 ${jam9L["SBY"]} ? * WED', 100);
+      notifBuatMapel('BK', '0 ${jam9L["BK"]} ? * WED', 110);
+      notifBuatMapel('TTL', '0 ${jam9L["TTL"]} ? * THU', 120);
+      notifBuatMapel('BIN', '0 ${jam9L["BIN"]} ? * THU', 130);
+      notifBuatMapel('PJS', '0 ${jam9L["PJS"]} ? * THU', 140);
+      notifBuatMapel('IPS', '0 ${jam9L["IPS"]} ? * THU', 150);
+      notifBuatMapel('QH', '0 ${jam9L["QH"]} ? * FRI', 160);
+      notifBuatMapel('BIG', '0 ${jam9L["BIG"]} ? * FRI', 170);
+      notifBuatMapel('KIR', '0 ${jam9L["KIR"]} ? * FRI', 180);
+      notifBuatMapel('Ngaji Pagi', '0 50 23 ? * *', 190);
       notifBuatMapel('Senam Pagi', '0 50 23 ? * FRI', 200);
       //notifBuatMapel('Tes', '0/10 * * * * ? *', 200);
     } else if (kelas == '9D') {
       notifBuatMapel('IPA', '0 ${jam9D["IPA"]} ? * MON', 10);
-      notifBuatMapel('BK', '0 ${jam9D["BK"]} ? * MON', 20);
-      notifBuatMapel('TTL', '0 ${jam9D["TTL"]} ? * MON', 30);
-      notifBuatMapel('KIR', '0 ${jam9D["KIR"]} ? * MON', 40);
+      notifBuatMapel('TTL', '0 ${jam9D["TTL"]} ? * MON', 20);
+      notifBuatMapel('SBY', '0 ${jam9D["SBY"]} ? * MON', 30);
+      notifBuatMapel('KIR', '0 ${jam9D["KIR"]} ? * TUE', 40);
       notifBuatMapel('PJS', '0 ${jam9D["PJS"]} ? * TUE', 50);
-      notifBuatMapel('MTK', '0 ${jam9D["MTK"]} ? * TUE', 60);
-      notifBuatMapel('SBY', '0 ${jam9D["SBY"]} ? * TUE', 70);
-      notifBuatMapel('BIN', '0 ${jam9D["BIN"]} ? * WED', 80);
-      notifBuatMapel('FQH', '0 ${jam9D["FQH"]} ? * WED', 90);
-      notifBuatMapel('IPS', '0 ${jam9D["IPS"]} ? * WED', 100);
-      notifBuatMapel('SKI', '0 ${jam9D["SKI"]} ? * THU', 110);
-      notifBuatMapel('PKY', '0 ${jam9D["PKY"]} ? * THU', 120);
-      notifBuatMapel('BA', '0 ${jam9D["BA"]} ? * THU', 130);
-      notifBuatMapel('AA', '0 ${jam9D["AA"]} ? * THU', 140);
-      notifBuatMapel('QH', '0 ${jam9D["QH"]} ? * THU', 150);
-      notifBuatMapel('BIG', '0 ${jam9D["BIG"]} ? * FRI', 160);
-      notifBuatMapel('PPKN', '0 ${jam9D["PPKN"]} ? * FRI', 170);
+      notifBuatMapel('BIG', '0 ${jam9D["BIG"]} ? * TUE', 60);
+      notifBuatMapel('BK', '0 ${jam9D["BK"]} ? * TUE', 70);
+      notifBuatMapel('SKI', '0 ${jam9D["SKI"]} ? * TUE', 80);
+      notifBuatMapel('QH', '0 ${jam9D["QH"]} ? * WED', 90);
+      notifBuatMapel('PKY', '0 ${jam9D["PKY"]} ? * WED', 100);
+      notifBuatMapel('IPS', '0 ${jam9D["IPS"]} ? * WED', 110);
+      notifBuatMapel('PPKN', '0 ${jam9D["PPKN"]} ? * WED', 120);
+      notifBuatMapel('AA', '0 ${jam9D["AA"]} ? * THU', 130);
+      notifBuatMapel('MTK', '0 ${jam9D["MTK"]} ? * THU', 140);
+      notifBuatMapel('BA', '0 ${jam9D["BA"]} ? * THU', 150);
+      notifBuatMapel('FQH', '0 ${jam9D["FQH"]} ? * FRI', 160);
+      notifBuatMapel('BIN', '0 ${jam9D["BIN"]} ? * FRI', 170);
       notifBuatMapel('Senam Pagi', '0 50 23 ? * FRI', 180);
     } else if (kelas == '9J') {
-      notifBuatMapel('BIN', '0 ${jam9J["BIN"]} ? * MON', 10);
-      notifBuatMapel('TTL', '0 ${jam9J["TTL"]} ? * MON', 20);
-      notifBuatMapel('AA', '0 ${jam9J["AA"]} ? * MON', 30);
-      notifBuatMapel('FQH', '0 ${jam9J["FQH"]} ? * MON', 40);
-      notifBuatMapel('BA', '0 ${jam9J["BA"]} ? * TUE', 50);
-      notifBuatMapel('PPKN', '0 ${jam9J["PPKN"]} ? * TUE', 60);
-      notifBuatMapel('BK', '0 ${jam9J["BK"]} ? * TUE', 70);
-      notifBuatMapel('PJS', '0 ${jam9J["PJS"]} ? * TUE', 80);
-      notifBuatMapel('KIR', '0 ${jam9J["KIR"]} ? * WED', 90);
+      notifBuatMapel('SBY', '0 ${jam9J["SBY"]} ? * MON', 10);
+      notifBuatMapel('PPKN', '0 ${jam9J["PPKN"]} ? * MON', 20);
+      notifBuatMapel('KIR', '0 ${jam9J["KIR"]} ? * MON', 30);
+      notifBuatMapel('AA', '0 ${jam9J["AA"]} ? * MON', 40);
+      notifBuatMapel('BIN', '0 ${jam9J["BIN"]} ? * TUE', 50);
+      notifBuatMapel('PJS', '0 ${jam9J["PJS"]} ? * TUE', 60);
+      notifBuatMapel('IPS', '0 ${jam9J["IPS"]} ? * TUE', 70);
+      notifBuatMapel('BIG', '0 ${jam9J["BIG"]} ? * WED', 80);
+      notifBuatMapel('TTL', '0 ${jam9J["TTL"]} ? * WED', 90);
       notifBuatMapel('IPA', '0 ${jam9J["IPA"]} ? * WED', 100);
-      notifBuatMapel('SBY', '0 ${jam9J["SBY"]} ? * WED', 110);
-      notifBuatMapel('MTK', '0 ${jam9J["MTK"]} ? * THU', 120);
-      notifBuatMapel('SKI', '0 ${jam9J["SKI"]} ? * THU', 130);
-      notifBuatMapel('BIG', '0 ${jam9J["BIG"]} ? * THU', 140);
-      notifBuatMapel('QH', '0 ${jam9J["QH"]} ? * FRI', 150);
-      notifBuatMapel('PKY', '0 ${jam9J["PKY"]} ? * FRI', 160);
-      notifBuatMapel('IPS', '0 ${jam9J["IPS"]} ? * FRI', 170);
+      notifBuatMapel('SKI', '0 ${jam9J["SKI"]} ? * THU', 110);
+      notifBuatMapel('QH', '0 ${jam9J["QH"]} ? * THU', 120);
+      notifBuatMapel('FQH', '0 ${jam9J["FQH"]} ? * THU', 130);
+      notifBuatMapel('MTK', '0 ${jam9J["MTK"]} ? * THU', 140);
+      notifBuatMapel('PKY', '0 ${jam9J["PKY"]} ? * FRI', 150);
+      notifBuatMapel('BK', '0 ${jam9J["BK"]} ? * FRI', 160);
+      notifBuatMapel('BA', '0 ${jam9J["BA"]} ? * FRI', 170);
       notifBuatMapel('Senam Pagi', '0 50 23 ? * FRI', 180);
     } else if (kelas == '9F') {
-      notifBuatMapel('BIN', '0 ${jam9F["BIN"]} ? * MON', 10);
-      notifBuatMapel('PKY', '0 ${jam9F["PKY"]} ? * MON', 20);
-      notifBuatMapel('QH', '0 ${jam9F["QH"]} ? * MON', 30);
-      notifBuatMapel('SKI', '0 ${jam9F["SKI"]} ? * MON', 40);
-      notifBuatMapel('PPKN', '0 ${jam9F["PPKN"]} ? * TUE', 50);
-      notifBuatMapel('FQH', '0 ${jam9F["FQH"]} ? * TUE', 60);
-      notifBuatMapel('IPA 1', '0 ${jam9F["IPA1"]} ? * TUE', 70);
-      notifBuatMapel('IPA 2', '0 ${jam9F["IPA2"]} ? * TUE', 190);
-      notifBuatMapel('BIG', '0 ${jam9F["BIG"]} ? * WED', 80);
-      notifBuatMapel('PJS', '0 ${jam9F["PJS"]} ? * WED', 90);
-      notifBuatMapel('TTL', '0 ${jam9F["TTL"]} ? * WED', 100);
-      notifBuatMapel('AA', '0 ${jam9F["AA"]} ? * WED', 110);
-      notifBuatMapel('BK', '0 ${jam9F["BK"]} ? * WED', 120);
-      notifBuatMapel('IPS', '0 ${jam9F["IPS"]} ? * THU', 130);
-      notifBuatMapel('BA', '0 ${jam9F["BA"]} ? * THU', 140);
-      notifBuatMapel('SBY', '0 ${jam9F["SBY"]} ? * THU', 150);
-      notifBuatMapel('MTK', '0 ${jam9F["MTK"]} ? * FRI', 160);
-      notifBuatMapel('KIR', '0 ${jam9F["KIR"]} ? * FRI', 170);
-      notifBuatMapel('Senam Pagi', '0 50 23 ? * FRI', 180);
+      notifBuatMapel('BK', '0 ${jam9F["BK"]} ? * MON', 10);
+      notifBuatMapel('MTK', '0 ${jam9F["MTK"]} ? * MON', 20);
+      notifBuatMapel('BIG', '0 ${jam9F["BIG"]} ? * MON', 30);
+      notifBuatMapel('IPA', '0 ${jam9F["IPA"]} ? * TUE', 40);
+      notifBuatMapel('IPS', '0 ${jam9F["IPS"]} ? * TUE', 50);
+      notifBuatMapel('PJS', '0 ${jam9F["PJS"]} ? * TUE', 60);
+      notifBuatMapel('AA', '0 ${jam9F["AA"]} ? * WED', 70);
+      notifBuatMapel('BIN', '0 ${jam9F["BIN"]} ? * WED', 190);
+      notifBuatMapel('BA', '0 ${jam9F["BA"]} ? * WED', 80);
+      notifBuatMapel('FQH', '0 ${jam9F["FQH"]} ? * THU', 90);
+      notifBuatMapel('PKY', '0 ${jam9F["PKY"]} ? * THU', 100);
+      notifBuatMapel('SBY', '0 ${jam9F["SBY"]} ? * THU', 110);
+      notifBuatMapel('TTL', '0 ${jam9F["TTL"]} ? * THU', 120);
+      notifBuatMapel('QH', '0 ${jam9F["QH"]} ? * THU', 130);
+      notifBuatMapel('PPKN', '0 ${jam9F["PPKN"]} ? * FRI', 140);
+      notifBuatMapel('SKI', '0 ${jam9F["SKI"]} ? * FRI', 150);
+      notifBuatMapel('KIR', '0 ${jam9F["KIR"]} ? * FRI', 160);
+      notifBuatMapel('Senam Pagi', '0 50 23 ? * FRI', 170);
     } else if (kelas == '8L') {
       notifBuatMapel('MTK', '0 ${jam8L["MTK"]} ? * MON', 10);
       notifBuatMapel('SBY', '0 ${jam8L["SBY"]} ? * MON', 20);
@@ -184,61 +183,61 @@ final jam9F = {
 
 final jam9D = {
   "IPA": itung(7, 20),
-  "BK": itung(8, 50),
-  "TTL": itung(10, 20),
-  "KIR": itung(10, 50),
-  "PJS": itung(7, 20),
+  "BK": itung(10, 20),
+  "TTL": itung(8, 50),
+  "KIR": itung(7, 20),
+  "PJS": itung(7, 50),
   "MTK": itung(7, 50),
   "SBY": itung(10, 20),
-  "BIN": itung(7, 20),
-  "FQH": itung(8, 50),
-  "IPS": itung(10, 20),
-  "SKI": itung(7, 20),
+  "BIN": itung(7, 50),
+  "FQH": itung(7, 20),
+  "IPS": itung(8, 20),
+  "SKI": itung(10, 50),
   "PKY": itung(7, 50),
-  "BA": itung(8, 20),
-  "AA": itung(10, 20),
-  "QH": itung(10, 50),
-  "BIG": itung(7, 20),
-  "PPKN": itung(8, 20)
+  "BA": itung(10, 20),
+  "AA": itung(7, 20),
+  "QH": itung(7, 20),
+  "BIG": itung(8, 20),
+  "PPKN": itung(10, 20)
 };
 
 final jam9J = {
-  "BIN": itung(7, 20),
-  "TTL": itung(8, 50),
-  "AA": itung(10, 20),
-  "FQH": itung(10, 50),
-  "BA": itung(7, 20),
-  "PPKN": itung(8, 20),
-  "BK": itung(10, 20),
+  "BIN": itung(7, 50),
+  "TTL": itung(10, 20),
+  "AA": itung(7, 20),
+  "FQH": itung(7, 20),
+  "BA": itung(10, 20),
+  "PPKN": itung(7, 20),
+  "BK": itung(7, 20),
   "PJS": itung(10, 50),
-  "KIR": itung(7, 20),
-  "IPA": itung(7, 50),
-  "SBY": itung(10, 20),
-  "MTK": itung(7, 20),
-  "SKI": itung(8, 50),
+  "KIR": itung(8, 50),
+  "IPA": itung(7, 20),
+  "SBY": itung(8, 20),
+  "MTK": itung(7, 50),
+  "SKI": itung(8, 20),
   "BIG": itung(10, 20),
-  "QH": itung(7, 20),
+  "QH": itung(10, 50),
   "PKY": itung(7, 50),
-  "IPS": itung(8, 20),
+  "IPS": itung(8, 50),
 };
 
 final jam9L = {
-  "IPA": itung(7, 20),
-  "Pembinaan": itung(8, 50),
-  "SKI": itung(10, 20),
-  "KIR": itung(10, 50),
-  "SBY": itung(7, 20),
-  "BIN": itung(7, 50),
-  "FQH": itung(10, 20),
+  "IPA": itung(8, 50),
+  "Pembinaan": itung(7, 50),
+  "SKI": itung(8, 20),
+  "KIR": itung(8, 50),
+  "SBY": itung(8, 50),
+  "BIN": itung(7, 20),
+  "FQH": itung(8, 50),
   "TTL": itung(10, 50),
   "MTK": itung(7, 20),
-  "PKY": itung(8, 50),
+  "PKY": itung(7, 20),
   "IPS": itung(10, 20),
   "QH": itung(7, 20),
   "AA": itung(7, 50),
-  "BIG": itung(8, 20),
-  "BA": itung(10, 20),
-  "PPKN": itung(7, 20),
-  "BK": itung(8, 20),
+  "BIG": itung(7, 50),
+  "BA": itung(7, 50),
+  "PPKN": itung(10, 20),
+  "BK": itung(10, 20),
   "PJS": itung(8, 50),
 };

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:school_app/Screen/constants.dart';
@@ -13,7 +12,6 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
     return WillPopScope(
       onWillPop: () async {

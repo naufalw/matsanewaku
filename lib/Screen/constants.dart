@@ -32,57 +32,46 @@ class FeaturedVidCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (ScreenUtil() == null) {
-      ScreenUtil.init(
-        context,
-        designSize: Size(
-          kWidth,
-          kHeight,
-        ),
-        allowFontScaling: true,
-      );
-    }
-
     return ClipRRect(
       borderRadius: BorderRadius.circular(
-        ScreenUtil().setWidth(10),
+        ScreenUtil().setWidth(14),
       ),
       child: Container(
-        width: ScreenUtil().setWidth(374),
-        height: ScreenUtil().setHeight(222),
+        width: ScreenUtil().setWidth(780),
+        height: ScreenUtil().setHeight(480),
         color: kMainColor,
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
             CachedNetworkImage(
-              width: ScreenUtil().setWidth(374),
-              height: ScreenUtil().setHeight(222),
+              width: ScreenUtil().setWidth(985),
+              height: ScreenUtil().setHeight(480),
               fit: BoxFit.cover,
               imageUrl: thumbnailURL,
             ),
             Opacity(
               opacity: 0.35,
               child: Container(
-                width: ScreenUtil().setWidth(374),
-                height: ScreenUtil().setHeight(222),
+                width: ScreenUtil().setWidth(985),
+                height: ScreenUtil().setHeight(480),
                 color: Color(0xff4D4E51),
               ),
             ),
             Icon(
               FontAwesomeIcons.playCircle,
               color: Colors.white,
-              size: ScreenUtil().setSp(36.0),
+              size: ScreenUtil().setSp(120.0),
             ),
             Positioned(
-              bottom: ScreenUtil().setHeight(10),
-              left: ScreenUtil().setWidth(20),
+              bottom: ScreenUtil().setHeight(20),
+              left: ScreenUtil().setWidth(40),
               child: Container(
                 width: 315,
                 child: Text(
                   '${title ?? 'Untitled'}',
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: ScreenUtil().setSp(16.0),
+                    fontSize: ScreenUtil().setSp(40.0),
                     fontWeight: FontWeight.w700,
                   ),
                 ),
@@ -93,8 +82,8 @@ class FeaturedVidCard extends StatelessWidget {
               child: InkWell(
                 onTap: onTap,
                 child: Container(
-                  width: ScreenUtil().setWidth(374),
-                  height: ScreenUtil().setHeight(222),
+                  width: ScreenUtil().setWidth(985),
+                  height: ScreenUtil().setHeight(480),
                   // color: Colors.red,
                 ),
               ),

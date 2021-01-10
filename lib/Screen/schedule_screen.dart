@@ -18,7 +18,7 @@ class ScheduleScreen extends StatefulWidget {
 
 class _ScheduleScreenState extends State<ScheduleScreen> {
   List kelas = [
-    "8L",
+    // "8L",
     "9D",
     "9F",
     "9J",
@@ -35,7 +35,6 @@ class _ScheduleScreenState extends State<ScheduleScreen> {
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
-    double height = MediaQuery.of(context).size.height;
     return AnnotatedRegion(
       value: SystemUiOverlayStyle.light
           .copyWith(systemNavigationBarColor: kBackGroundColor),

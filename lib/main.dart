@@ -1,6 +1,7 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_screenutil/screenutil.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -72,6 +73,7 @@ class _MyAppState extends State<MyApp> {
           debugShowCheckedModeBanner: false,
           title: 'Matsanewaku',
           home: SplashScreen(),
+          theme: ThemeData.dark(),
         );
       },
     );
@@ -81,8 +83,10 @@ class _MyAppState extends State<MyApp> {
 class SplashScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    ScreenUtil.init(context);
     double height = MediaQuery.of(context).size.height;
     return SplashScreenView(
+      backgroundColor: Colors.white,
       imageSrc: 'assets/icon/icon.png',
       imageSize: height ~/ 3.5,
       home: MainMenuPage(),
@@ -92,6 +96,7 @@ class SplashScreen extends StatelessWidget {
       textStyle: GoogleFonts.quicksand(
         fontSize: 35.0,
         fontWeight: FontWeight.bold,
+        color: Colors.black,
       ),
     );
   }

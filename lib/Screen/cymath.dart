@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:navigator_transitions_route/navigator_transitions_route.dart';
-import 'package:school_app/Screen/main_menu.dart';
+import 'package:school_app/Screen/tools_menu.dart';
 
 import 'constants.dart';
 
@@ -25,7 +25,7 @@ class _CymathPageState extends State<CymathPage> {
         setState(() {
           NavigatorTransitionsRoute(
               context: context,
-              child: MainMenuPage(),
+              child: ToolsMenu(),
               animation: AnimationType.slideRightToLeft,
               duration: Duration(milliseconds: 300),
               replacement: true);
@@ -67,7 +67,6 @@ class _CymathPageState extends State<CymathPage> {
               ),
               onTap: () async {
                 await webView.close();
-                Navigator.pop(context);
               },
             ),
             brightness: Brightness.dark,

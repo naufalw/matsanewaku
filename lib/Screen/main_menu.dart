@@ -77,7 +77,6 @@ class _MainMenuPageState extends State<MainMenuPage> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return AnnotatedRegion<SystemUiOverlayStyle>(

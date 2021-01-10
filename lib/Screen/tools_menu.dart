@@ -19,7 +19,6 @@ class ToolsMenu extends StatefulWidget {
 class _ToolsMenuState extends State<ToolsMenu> {
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context);
     double width = MediaQuery.of(context).size.width;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light
@@ -146,17 +145,52 @@ class _ToolsMenuState extends State<ToolsMenu> {
                                 width: width,
                                 animType: AnimationType.slideLeftToRight,
                                 text: "Cymath",
-                                icon: FontAwesomeIcons.calculator,
+                                icon: Icons.calculate,
                                 navigateTo: CymathPage()),
                             ToolsMenuCard(
                               width: width,
                               animType: AnimationType.slideRightToLeft,
                               text: "Conjugator",
-                              icon: Icons.book_rounded,
+                              icon: Icons.book_sharp,
                               navigateTo: ToolsMenuBrowser(
                                   url: 'https://en.bab.la/conjugation/english/',
                                   animType: AnimationType.slideLeftToRight,
                                   title: "Conjugator"),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      width: double.infinity,
+                      height: ScreenUtil().setHeight(30),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Container(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ToolsMenuCard(
+                              width: width,
+                              animType: AnimationType.slideLeftToRight,
+                              text: "Mathsisfun",
+                              icon: Icons.calculate_outlined,
+                              navigateTo: ToolsMenuBrowser(
+                                  url: 'https://www.mathsisfun.com/',
+                                  animType: AnimationType.slideLeftToRight,
+                                  title: "Mathsisfun"),
+                            ),
+                            ToolsMenuCard(
+                              width: width,
+                              animType: AnimationType.slideRightToLeft,
+                              text: "Conjugator",
+                              icon: FontAwesomeIcons.book,
+                              navigateTo: ToolsMenuBrowser(
+                                  url: 'https://kbbi.kemdikbud.go.id/',
+                                  animType: AnimationType.slideLeftToRight,
+                                  title: "KBBI"),
                             ),
                           ],
                         ),
