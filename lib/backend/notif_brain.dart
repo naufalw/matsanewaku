@@ -121,9 +121,18 @@ void applySchedule(bool state) async {
 }
 
 void notifBuatMapel(String mapel, String waktu, int id) {
+  final time = DateTime.parse(waktu);
   AwesomeNotifications().createNotification(
-      schedule: NotificationSchedule(
-        crontabSchedule: waktu,
+      schedule: NotificationCalendar(
+        era: 0,
+        year: time.year,
+        month: time.month,
+        day: time.day,
+        hour: time.hour,
+        minute: time.minute,
+        second: time.second,
+        millisecond: time.millisecond,
+        weekday: time.weekday,
         allowWhileIdle: true,
       ),
       content: NotificationContent(

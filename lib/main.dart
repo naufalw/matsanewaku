@@ -1,8 +1,8 @@
 import 'package:awesome_notifications/awesome_notifications.dart';
-import 'package:dynamic_theme/dynamic_theme.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:prefs/prefs.dart';
@@ -59,23 +59,11 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    return DynamicTheme(
-      defaultBrightness: Brightness.dark,
-      data: (brightness) => ThemeData(
-          primarySwatch: Colors.blue,
-          primaryColorDark: Colors.red,
-          primaryColorLight: Colors.blue,
-          accentColor: Colors.blue,
-          brightness: brightness,
-          scaffoldBackgroundColor: Colors.black12),
-      themedWidgetBuilder: (context, theme) {
-        return MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'Matsanewaku',
-          home: SplashScreen(),
-          theme: ThemeData.dark(),
-        );
-      },
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Matsanewaku',
+      home: SplashScreen(),
+      theme: ThemeData.dark(),
     );
   }
 }
@@ -89,7 +77,7 @@ class SplashScreen extends StatelessWidget {
       backgroundColor: Colors.white,
       imageSrc: 'assets/icon/icon.png',
       imageSize: height ~/ 3.5,
-      home: MainMenuPage(),
+      navigateRoute: MainMenuPage(),
       duration: 1800,
       text: "By Nopal Gemink",
       //textType: TextType.NormalText,

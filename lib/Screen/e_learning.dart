@@ -1,10 +1,8 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_webview_plugin/flutter_webview_plugin.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:school_app/Screen/constants.dart';
-import 'package:school_app/Screen/main_menu.dart';
 
 class ELearningPage extends StatefulWidget {
   @override
@@ -13,39 +11,22 @@ class ELearningPage extends StatefulWidget {
 
 class _ELearningPageState extends State<ELearningPage> {
   final flutterWebviewPlugin = new FlutterWebviewPlugin();
-  StreamSubscription _onDestroy;
   @override
   void initState() {
     super.initState();
     flutterWebviewPlugin.close();
-    _onDestroy = flutterWebviewPlugin.onDestroy.listen((_) {
-      if (mounted) {
-        setState(() {
-          NavigatorTransitionsRoute(
-              context: context,
-              child: MainMenuPage(),
-              animation: AnimationType.slideLeftToRight,
-              duration: Duration(milliseconds: 300),
-              replacement: true);
-        });
-      }
-    });
   }
 
   @override
   void dispose() {
     super.dispose();
-    _onDestroy.cancel();
     flutterWebviewPlugin.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async {
-        flutterWebviewPlugin.close();
-        return true;
-      },
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle(systemNavigationBarColor: kBackGroundColor),
       child: WebviewScaffold(
         url: 'https://e-learning.mtsn1malang.sch.id',
         ignoreSSLErrors: true,

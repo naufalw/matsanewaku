@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:prefs/prefs.dart';
 import 'package:school_app/Screen/constants.dart';
+import 'package:school_app/Screen/settings_page.dart';
 import 'package:share/share.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:youtube_parser/youtube_parser.dart';
@@ -67,7 +69,24 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
           child: Scaffold(
             backgroundColor: kBackGroundColor,
             appBar: AppBar(
+              centerTitle: true,
+              title: Text(
+                "Video Player",
+                style: GoogleFonts.firaSans(fontWeight: FontWeight.w500),
+              ),
               backgroundColor: kBackGroundColor,
+              actions: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Tooltip(
+                    message: "Settings",
+                    child: InkWell(
+                      onTap: () => Get.to(() => SettingsPage()),
+                      child: Icon(Icons.settings),
+                    ),
+                  ),
+                )
+              ],
             ),
             body: Column(
               children: [
@@ -89,7 +108,14 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
                   child: Container(
                     width: ScreenUtil().screenWidth,
                     height: ScreenUtil().setHeight(95),
-                    child: RaisedButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(
+                              ScreenUtil().setWidth(24),
+                            ),
+                          ),
+                          primary: kMainColor),
                       onPressed: () async {
                         _controller.pause();
                         String url = 'https://www.youtubepp.com/watch?v=$idVid';
@@ -102,12 +128,6 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
                               confirmBtnColor: kMainColor);
                         }
                       },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          ScreenUtil().setWidth(24),
-                        ),
-                      ),
-                      color: kMainColor,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
@@ -133,17 +153,19 @@ class _YoutubePlayerPageState extends State<YoutubePlayerPage> {
                   child: Container(
                     width: ScreenUtil().screenWidth,
                     height: ScreenUtil().setHeight(95),
-                    child: RaisedButton(
+                    child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(
+                            ScreenUtil().setWidth(24),
+                          ),
+                        ),
+                        primary: kMainColor,
+                      ),
                       onPressed: () async {
                         _controller.pause();
                         Share.share(urlVid);
                       },
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(
-                          ScreenUtil().setWidth(24),
-                        ),
-                      ),
-                      color: kMainColor,
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [

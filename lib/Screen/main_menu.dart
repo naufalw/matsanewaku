@@ -4,7 +4,6 @@ import 'package:flutter_screenutil/screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:navigator_transitions_route/navigator_transitions_route.dart';
 import 'package:prefs/prefs.dart';
 import 'package:school_app/Screen/constants.dart';
 import 'package:school_app/Screen/e_learning.dart';
@@ -15,7 +14,9 @@ import 'package:school_app/Screen/schedule_screen.dart';
 import 'package:school_app/Screen/videoPlaylist_selector.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:school_app/backend/notif_brain.dart';
-// ignore: unused_import
+import 'package:get/get.dart';
+import 'newkeepnotescreen.dart';
+import 'tools_menu.dart';
 
 class MainMenuPage extends StatefulWidget {
   @override
@@ -81,7 +82,7 @@ class _MainMenuPageState extends State<MainMenuPage> {
     double height = MediaQuery.of(context).size.height;
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.light
-          .copyWith(systemNavigationBarColor: Colors.transparent),
+          .copyWith(systemNavigationBarColor: Colors.white),
       child: WillPopScope(
         onWillPop: () async => CoolAlert.show(
           type: CoolAlertType.confirm,
@@ -91,152 +92,148 @@ class _MainMenuPageState extends State<MainMenuPage> {
           confirmBtnText: "Yes",
           onConfirmBtnTap: () => SystemNavigator.pop(),
         ),
-        child: Scaffold(
-          backgroundColor: kBackGroundColor,
-          body: Stack(children: [
-            Column(
-              children: [
-                Container(
-                  width: double.infinity,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Container(
-                        color: kBackGroundColor,
-                        width: width,
-                        height: ScreenUtil().setHeight(40),
-                      ),
-                      Container(
-                        color: kBackGroundColor,
-                        width: width,
-                        height: ScreenUtil().setHeight(200),
-                        child: Center(
-                          child: Text(
-                            "Halo Bro !",
-                            style: GoogleFonts.fredokaOne(
-                                fontSize: ScreenUtil().setSp(120),
-                                color: Colors.white),
+        child: SafeArea(
+          child: Scaffold(
+            backgroundColor: kBackGroundColor,
+            body: Stack(children: [
+              Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          color: kBackGroundColor,
+                          width: width,
+                          height: ScreenUtil().setHeight(200),
+                          child: Center(
+                            child: Text(
+                              "Halo Bro !",
+                              style: GoogleFonts.fredokaOne(
+                                  fontSize: ScreenUtil().setSp(120),
+                                  color: Colors.white),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        width: width,
-                        height: ScreenUtil().setHeight(600),
-                        child: ListView.builder(
-                          padding: EdgeInsets.all(0),
-                          itemBuilder: (_, index) {
-                            return Column(
+                        Container(
+                          width: width,
+                          height: ScreenUtil().setHeight(600),
+                          child: ListView.builder(
+                            padding: EdgeInsets.all(0),
+                            itemBuilder: (_, index) {
+                              return Column(
+                                children: [
+                                  JadwalCard(width: width, height: height),
+                                  SizedBox(
+                                    width: width,
+                                    height: ScreenUtil().setHeight(30),
+                                  )
+                                ],
+                              );
+                            },
+                            itemCount: 5,
+                            addRepaintBoundaries: false,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+              SlidingUpPanel(
+                //parallaxEnabled: true,
+                backdropEnabled: true,
+                borderRadius: BorderRadius.circular(30),
+                defaultPanelState: PanelState.CLOSED,
+                maxHeight: 0.9 * height,
+                minHeight: 0.57 * height,
+                panel: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(35),
+                      topLeft: Radius.circular(35),
+                    ),
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 30),
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          //crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            ReusableMainMenuCard(
+                              text: "Zoom Vid",
+                              icon: FontAwesomeIcons.video,
+                              onPressed: () =>
+                                  Get.to(() => VideoPlaylistSelector()),
+                            ),
+                            ReusableMainMenuCard(
+                              text: "E-Learning",
+                              icon: FontAwesomeIcons.school,
+                              onPressed: () => Get.to(() => ELearningPage()),
+                            )
+                          ],
+                        ),
+                        SizedBox(
+                          width: double.infinity,
+                          height: ScreenUtil().setHeight(60),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                JadwalCard(width: width, height: height),
-                                SizedBox(
-                                  width: width,
-                                  height: ScreenUtil().setHeight(30),
+                                ReusableMainMenuCard(
+                                  text: "Tools",
+                                  icon: FontAwesomeIcons.toolbox,
+                                  onPressed: () => Get.to(() => ToolsMenu()),
+                                ),
+                                ReusableMainMenuCard(
+                                  text: "Schedule",
+                                  icon: FontAwesomeIcons.solidClock,
+                                  onPressed: () =>
+                                      Get.to(() => ScheduleScreen()),
                                 )
                               ],
-                            );
-                          },
-                          itemCount: 5,
-                          addRepaintBoundaries: false,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-            SlidingUpPanel(
-              //parallaxEnabled: true,
-              backdropEnabled: true,
-              borderRadius: BorderRadius.circular(30),
-              defaultPanelState: PanelState.CLOSED,
-              maxHeight: 0.9 * height,
-              minHeight: 0.57 * height,
-              panel: Container(
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(35),
-                    topLeft: Radius.circular(35),
-                  ),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 30),
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        //crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          ReusableMainMenuCard(
-                            text: "Zoom Vid",
-                            icon: FontAwesomeIcons.video,
-                            animation: AnimationType.slideLeftToRight,
-                            goToScreen: VideoPlaylistSelector(),
-                          ),
-                          ReusableMainMenuCard(
-                            text: "E-Learning",
-                            icon: FontAwesomeIcons.school,
-                            animation: AnimationType.slideRightToLeft,
-                            goToScreen: ELearningPage(),
-                          )
-                        ],
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: ScreenUtil().setHeight(60),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              ReusableMainMenuCard(
-                                text: "Tools",
-                                icon: FontAwesomeIcons.toolbox,
-                                animation: AnimationType.slideLeftToRight,
-                                goToScreen: ToolsMenu(),
-                              ),
-                              ReusableMainMenuCard(
-                                  goToScreen: ScheduleScreen(),
-                                  animation: AnimationType.slideRightToLeft,
-                                  text: "Schedule",
-                                  icon: FontAwesomeIcons.solidClock)
-                            ],
+                            ),
                           ),
                         ),
-                      ),
-                      SizedBox(
-                        width: double.infinity,
-                        height: ScreenUtil().setHeight(60),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            children: [
-                              UnusedCardWidgetMenu(
-                                icon: FontAwesomeIcons.book,
-                                text: "Books",
-                              ),
-                              ReusableMainMenuCard(
-                                goToScreen: GoogleKeepNewPage(),
-                                animation: AnimationType.slideRightToLeft,
-                                text: "Notes",
-                                icon: FontAwesomeIcons.solidStickyNote,
-                              )
-                            ],
+                        SizedBox(
+                          width: double.infinity,
+                          height: ScreenUtil().setHeight(60),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              children: [
+                                UnusedCardWidgetMenu(
+                                  icon: FontAwesomeIcons.book,
+                                  text: "Books",
+                                ),
+                                ReusableMainMenuCard(
+                                  onPressed: () =>
+                                      Get.to(() => GoogleKeepNewPage()),
+                                  text: "Notes",
+                                  icon: FontAwesomeIcons.solidStickyNote,
+                                )
+                              ],
+                            ),
                           ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          ]),
+            ]),
+          ),
         ),
       ),
     );
@@ -404,10 +401,13 @@ class UnusedCardWidgetMenu extends StatelessWidget {
     return Container(
       width: ScreenUtil().setWidth(430),
       height: ScreenUtil().setHeight(360),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        color: kMainColor,
-        elevation: 5,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          primary: kMainColor,
+          elevation: 5,
+        ),
         onPressed: () {},
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -428,35 +428,27 @@ class UnusedCardWidgetMenu extends StatelessWidget {
 }
 
 class ReusableMainMenuCard extends StatelessWidget {
-  final goToScreen;
-  final animation;
+  final Function onPressed;
+
   final text;
   final icon;
 
   ReusableMainMenuCard(
-      {@required this.goToScreen,
-      @required this.animation,
-      @required this.text,
-      @required this.icon});
+      {@required this.onPressed, @required this.text, @required this.icon});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: ScreenUtil().setWidth(430),
       height: ScreenUtil().setHeight(360),
-      child: RaisedButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
-        color: kMainColor,
-        elevation: 5,
-        onPressed: () {
-          NavigatorTransitionsRoute(
-            context: context,
-            child: goToScreen,
-            animation: animation,
-            replacement: false,
-            duration: Duration(milliseconds: 300),
-          );
-        },
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(40)),
+          primary: kMainColor,
+          elevation: 5,
+        ),
+        onPressed: onPressed,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
